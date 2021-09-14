@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import "./components/mapContent/MapStyles.css"
+import { AppViews } from './AppView';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppViews />
   </React.StrictMode>,
   document.getElementById('root')
 );
