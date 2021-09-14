@@ -1,0 +1,16 @@
+.mapBox {
+margin: auto;
+max-width: 940px;
+margin-top: 7rem;
+}
+
+.state {
+	position: relative;
+	transition: 0.3s;
+	fill: whitesmoke;
+  stroke-width: 10px;
+}
+.state:hover {
+	fill: rgb(255, 134, 21);
+	cursor: pointer;
+}
