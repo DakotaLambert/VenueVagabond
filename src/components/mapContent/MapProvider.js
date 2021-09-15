@@ -11,7 +11,12 @@ export const MapProvider = (props) => {
 			.then(setStates);
 	};
 	const getStateById = (stateId) => {
-		return fetch(`http://localhost:8000/states/${stateId}`)
+		return fetch(`http://localhost:8000/states/${stateId}`,{
+      headers: {
+				Authorization: `Token ${localStorage.getItem("VV_User")}`,
+				"Content-Type": "application/json",
+			},
+    })
 			.then((response) => response.json())
 			.then(setStates);
 	};
