@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useHistory } from "react-router";
 import "../mapContent/MapStyles.css";
+import { MapContext } from "./MapProvider";
 
 export const USMap = () => {
+
+  const {getStateById} = useContext(MapContext)
+  const history = useHistory()
 	return (
 		<>
 			<div className="mapBox">
 				<svg width="959" height="593">
 					<path
 						onClick={() => {
-							console.log(2);
+							console.log(2)
+              getStateById(2).then(() => {history.push(`/state/${2}`)});
 						}}
 						id="AK"
 						className="state"
@@ -16,7 +22,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(15);
+							console.log(15)
+              getStateById(15).then(() => {history.push(`/state/${15}`)});
 						}}
 						className="state"
 						id="HI"
@@ -26,13 +33,15 @@ export const USMap = () => {
 						className="state"
 						id="AL"
 						onClick={() => {
-							console.log(1);
+							console.log(1)
+              getStateById(1).then(() => {history.push(`/state/${1}`)});
 						}}
 						d="M628.5,466.4 l0.6,0.2 1.3,-2.7 1.5,-4.4 2.3,0.6 3.1,6 v1 l-2.7,1.9 2.7,0.3 5.2,-2.5 -0.3,-7.6 -2.5,-1.8 -2,-2 0.4,-4 10.5,-1.5 25.7,-2.9 6.7,-0.6 5.6,0.1 -0.5,-2.2 -1.5,-0.8 -0.9,-1.1 1,-2.6 -0.4,-5.2 -1.6,-4.5 0.8,-5.1 1.7,-4.8 -0.2,-1.7 -1.8,-0.7 -0.5,-3.6 -2.7,-3.4 -2,-6.5 -1.4,-6.7 -1.8,-5 -3.8,-16 -3.5,-7.9 -0.8,-5.6 0.1,-2.2 -9,0.8 -23.4,2.2 -12.2,0.8 -0.2,6.4 0.2,16.7 -0.7,31 -0.3,14.1 2.8,18.8 1.6,14.7z"
 					/>
 					<path
 						onClick={() => {
-							console.log(5);
+							console.log(5)
+              getStateById(5).then(() => {history.push(`/state/${5}`)});
 						}}
 						className="state"
 						id="AR"
@@ -40,7 +49,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(4);
+							console.log(4)
+              getStateById(4).then(() => {history.push(`/state/${4}`)});
 						}}
 						className="state"
 						id="AZ"
@@ -48,7 +58,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(6);
+							console.log(6)
+              getStateById(6).then(() => {history.push(`/state/${6}`)});
 						}}
 						className="state"
 						id="CA"
@@ -56,7 +67,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(7);
+							console.log(7)
+              getStateById(7).then(() => {history.push(`/state/${7}`)});
 						}}
 						className="state"
 						id="CO"
@@ -64,7 +76,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(8);
+							console.log(8)
+              getStateById(8).then(() => {history.push(`/state/${8}`)});
 						}}
 						className="state"
 						id="CT"
@@ -72,7 +85,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(9);
+							console.log(9)
+              getStateById(9).then(() => {history.push(`/state/${9}`)});
 						}}
 						className="state"
 						id="DE"
@@ -80,7 +94,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(12);
+							console.log(12)
+              getStateById(12).then(() => {history.push(`/state/${12}`)});
 						}}
 						className="state"
 						id="FL"
@@ -88,7 +103,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(13);
+							console.log(13)
+              getStateById(13).then(() => {history.push(`/state/${13}`)});
 						}}
 						className="state"
 						id="GA"
@@ -96,7 +112,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(19);
+							console.log(19)
+              getStateById(19).then(() => {history.push(`/state/${19}`)});
 						}}
 						className="state"
 						id="IA"
@@ -104,7 +121,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(16);
+							console.log(16)
+              getStateById(16).then(() => {history.push(`/state/${16}`)});
 						}}
 						className="state"
 						id="ID"
@@ -112,7 +130,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(17);
+							console.log(17)
+              getStateById(17).then(() => {history.push(`/state/${17}`)});
 						}}
 						className="state"
 						id="IL"
@@ -120,7 +139,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(18);
+							console.log(18)
+              getStateById(18).then(() => {history.push(`/state/${18}`)});
 						}}
 						className="state"
 						id="IN"
@@ -128,7 +148,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(20);
+							console.log(20)
+              getStateById(20).then(() => {history.push(`/state/${20}`)});
 						}}
 						className="state"
 						id="KS"
@@ -136,7 +157,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(21);
+							console.log(21)
+              getStateById(21).then(() => {history.push(`/state/${21}`)});
 						}}
 						className="state"
 						id="KY"
@@ -144,7 +166,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(22);
+							console.log(22)
+              getStateById(22).then(() => {history.push(`/state/${22}`)});
 						}}
 						className="state"
 						id="LA"
@@ -152,7 +175,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(26);
+							console.log(26)
+              getStateById(26).then(() => {history.push(`/state/${26}`)});
 						}}
 						className="state"
 						id="MA"
@@ -160,7 +184,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(25);
+							console.log(25)
+              getStateById(25).then(() => {history.push(`/state/${25}`)});
 						}}
 						className="state"
 						id="MD"
@@ -168,7 +193,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(23);
+							console.log(23)
+              getStateById(23).then(() => {history.push(`/state/${23}`)});
 						}}
 						className="state"
 						id="ME"
@@ -176,7 +202,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(27);
+							console.log(27)
+              getStateById(27).then(() => {history.push(`/state/${27}`)});
 						}}
 						className="state"
 						id="MI"
@@ -184,7 +211,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(28);
+							console.log(28)
+              getStateById(28).then(() => {history.push(`/state/${28}`)});
 						}}
 						className="state"
 						id="MN"
@@ -192,7 +220,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(30);
+							console.log(30)
+              getStateById(30).then(() => {history.push(`/state/${30}`)});
 						}}
 						className="state"
 						id="MO"
@@ -200,7 +229,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(29);
+							console.log(29)
+              getStateById(29).then(() => {history.push(`/state/${29}`)});
 						}}
 						className="state"
 						id="MS"
@@ -208,7 +238,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(31);
+							console.log(31)
+              getStateById(31).then(() => {history.push(`/state/${31}`)});
 						}}
 						className="state"
 						id="MT"
@@ -216,7 +247,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(38);
+							console.log(38)
+              getStateById(38).then(() => {history.push(`/state/${38}`)});
 						}}
 						className="state"
 						id="NC"
@@ -224,7 +256,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(39);
+							console.log(39)
+              getStateById(39).then(() => {history.push(`/state/${39}`)});
 						}}
 						className="state"
 						id="ND"
@@ -232,7 +265,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(32);
+							console.log(32)
+              getStateById(32).then(() => {history.push(`/state/${32}`)});
 						}}
 						className="state"
 						id="NE"
@@ -240,7 +274,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(34);
+							console.log(34)
+              getStateById(34).then(() => {history.push(`/state/${34}`)});
 						}}
 						className="state"
 						id="NH"
@@ -248,7 +283,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(35);
+							console.log(35)
+              getStateById(35).then(() => {history.push(`/state/${35}`)});
 						}}
 						className="state"
 						id="NJ"
@@ -256,7 +292,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(36);
+							console.log(36)
+              getStateById(36).then(() => {history.push(`/state/${36}`)});
 						}}
 						className="state"
 						id="NM"
@@ -264,7 +301,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(33);
+							console.log(33)
+              getStateById(33).then(() => {history.push(`/state/${33}`)});
 						}}
 						className="state"
 						id="NV"
@@ -272,7 +310,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(37);
+							console.log(37)
+              getStateById(37).then(() => {history.push(`/state/${37}`)});
 						}}
 						className="state"
 						id="NY"
@@ -280,7 +319,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(41);
+							console.log(41)
+              getStateById(41).then(() => {history.push(`/state/${41}`)});
 						}}
 						className="state"
 						id="OH"
@@ -288,7 +328,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(42);
+							console.log(42)
+              getStateById(42).then(() => {history.push(`/state/${42}`)});
 						}}
 						className="state"
 						id="OK"
@@ -296,7 +337,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(43);
+							console.log(43)
+              getStateById(43).then(() => {history.push(`/state/${43}`)});
 						}}
 						className="state"
 						id="OR"
@@ -304,7 +346,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(45);
+							console.log(45)
+              getStateById(45).then(() => {history.push(`/state/${45}`)});
 						}}
 						className="state"
 						id="PA"
@@ -312,7 +355,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(47);
+							console.log(47)
+              getStateById(47).then(() => {history.push(`/state/${47}`)})
 						}}
 						className="state"
 						id="RI"
@@ -320,7 +364,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(48);
+							console.log(48)
+              getStateById(48).then(() => {history.push(`/state/${48}`)})
 						}}
 						className="state"
 						id="SC"
@@ -328,7 +373,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(49);
+							console.log(49)
+              getStateById(49).then(() => {history.push(`/state/${49}`)});
 						}}
 						className="state"
 						id="SD"
@@ -336,7 +382,7 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(50);
+							getStateById(50).then(() => {history.push(`/state/${50}`)});
 						}}
 						className="state"
 						id="TN"
@@ -346,13 +392,14 @@ export const USMap = () => {
 						className="state"
 						id="TX"
 						onClick={() => {
-							console.log(51);
+							getStateById(51).then(() => {history.push(`/state/${51}`)});
 						}}
 						d="M282.8,425.6 l37,3.6 29.3,1.9 7.4,-97.7 54.4,2.4 -1.7,23.3 -1,18 0.2,2 4.4,4.1 2,1.1 h1.8 l0.5,-1.2 0.7,0.9 2.4,0.2 1.1,-0.6 v-0.2 l1,0.5 -0.4,3.7 4.5,0.7 2.4,0.9 4.2,0.7 2.6,1.8 2.8,-1.9 2.7,0.6 2.2,3.1 0.8,0.1 v2.1 l3.3,1.1 2.5,-2.1 1.5,0.5 2.1,0.1 0.6,2.1 5.2,2 2.3,-0.5 1.9,-4 h0.1 l1.1,1.9 4.6,0.9 3.4,1.3 3.2,1 2.4,-1.2 0.7,-2.3 h3.6 l2.1,1 3,-2 h0.4 l0.5,1.4 h4.7 l1.9,-1.8 1.3,0.4 1.7,2.1 3.3,1.9 3.4,1 2.5,1.4 2.7,2 3.1,-1.2 2.1,0.8 0.7,20 0.7,9.5 0.6,4.1 2.6,4.4 0.9,4.5 4.2,5.9 0.3,3.1 0.6,0.8 -0.7,7.7 -2.9,4.8 1.3,2.6 -0.5,2.4 -0.8,7.2 -1.3,3 0.3,4.2 -5.6,1.6 -9.9,4.5 -1,1.9 -2.6,1.9 -2.1,1.5 -1.3,0.8 -5.7,5.3 -2.7,2.1 -5.3,3.2 -5.7,2.4 -6.3,3.4 -1.8,1.5 -5.8,3.6 -3.4,0.6 -3.9,5.5 -4,0.3 -1,1.9 2.3,1.9 -1.5,5.5 -1.3,4.5 -1.1,3.9 -0.8,4.5 0.8,2.4 1.8,7 1,6.1 1.8,2.7 -1,1.5 -3.1,1.9 -5.7,-3.9 -5.5,-1.1 -1.3,0.5 -3.2,-0.6 -4.2,-3.1 -5.2,-1.1 -7.6,-3.4 -2.1,-3.9 -1.3,-6.5 -3.2,-1.9 -0.6,-2.3 0.6,-0.6 0.3,-3.4 -1.3,-0.6 -0.6,-1 1.3,-4.4 -1.6,-2.3 -3.2,-1.3 -3.4,-4.4 -3.6,-6.6 -4.2,-2.6 0.2,-1.9 -5.3,-12.3 -0.8,-4.2 -1.8,-1.9 -0.2,-1.5 -6,-5.3 -2.6,-3.1 v-1.1 l-2.6,-2.1 -6.8,-1.1 -7.4,-0.6 -3.1,-2.3 -4.5,1.8 -3.6,1.5 -2.3,3.2 -1,3.7 -4.4,6.1 -2.4,2.4 -2.6,-1 -1.8,-1.1 -1.9,-0.6 -3.9,-2.3 v-0.6 l-1.8,-1.9 -5.2,-2.1 -7.4,-7.8 -2.3,-4.7 v-8.1 l-3.2,-6.5 -0.5,-2.7 -1.6,-1 -1.1,-2.1 -5,-2.1 -1.3,-1.6 -7.1,-7.9 -1.3,-3.2 -4.7,-2.3 -1.5,-4.4 -2.6,-2.9 -1.7,-0.5z m174.4,141.7 -0.6,-7.1 -2.7,-7.2 -0.6,-7 1.5,-8.2 3.3,-6.9 3.5,-5.4 3.2,-3.6 0.6,0.2 -4.8,6.6 -4.4,6.5 -2,6.6 -0.3,5.2 0.9,6.1 2.6,7.2 0.5,5.2 0.2,1.5z"
 					/>
 					<path
 						onClick={() => {
-							console.log(52);
+							console.log(52)
+              getStateById(52).then(() => {history.push(`/state/${52}`)});
 						}}
 						className="state"
 						id="UT"
@@ -360,7 +407,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(55);
+							console.log(55)
+              getStateById(55).then(() => {history.push(`/state/${55}`)});
 						}}
 						className="state"
 						id="VA"
@@ -368,7 +416,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(53);
+							console.log(53)
+              getStateById(53).then(() => {history.push(`/state/${53}`)});
 						}}
 						className="state"
 						id="VT"
@@ -376,7 +425,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(56);
+							console.log(56)
+              getStateById(56).then(() => {history.push(`/state/${56}`)});
 						}}
 						className="state"
 						id="WA"
@@ -384,7 +434,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(58);
+							console.log(58)
+              getStateById(58).then(() => {history.push(`/state/${58}`)});
 						}}
 						className="state"
 						id="WI"
@@ -392,7 +443,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(57);
+							console.log(57)
+              getStateById(57).then(() => {history.push(`/state/${57}`)});
 						}}
 						className="state"
 						id="WV"
@@ -400,7 +452,8 @@ export const USMap = () => {
 					/>
 					<path
 						onClick={() => {
-							console.log(59);
+							console.log(59)
+              getStateById(59).then(() => {history.push(`/state/${59}`)});
 						}}
 						className="state"
 						id="WY"
@@ -409,7 +462,8 @@ export const USMap = () => {
 					<g
 						id="DC"
 						onClick={() => {
-							console.log(10);
+							console.log(10)
+              getStateById(10).then(() => {history.push(`/state/${10}`)});
 						}}
 						className="state"
 					>
