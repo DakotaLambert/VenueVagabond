@@ -15,7 +15,7 @@ export const Register = (props) => {
 	const passwordDialog = useRef();
 	const history = useHistory();
 	const [currentPicture, setCurrentPicture] = useState({});
-
+  
 	const getBase64 = (file, callback) => {
 		const reader = new FileReader();
 		reader.addEventListener("load", () => callback(reader.result));
