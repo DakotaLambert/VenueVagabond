@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { EventTypeContext } from "./EventTypeProvider";
 
 
-export const EventTypeMap = () => {
+export const EventTypeMap = ({handleControlledInputChange}) => {
 	const { eventTypes, getEventTypes } = useContext(EventTypeContext);
 
 	useEffect(() => {
@@ -10,7 +10,13 @@ export const EventTypeMap = () => {
 	}, []);
 
 	return (
-			<select>
+			<select 
+      className="FormField"
+      onChange={handleControlledInputChange}
+        name="eventTypeId"
+        
+        >
+          <option>Choose Event Type</option>
 				{eventTypes.map((type) => {
 					return (
 						<option key={type.id} value={type.id}>
@@ -21,3 +27,5 @@ export const EventTypeMap = () => {
 			</select>
 	);
 };
+
+

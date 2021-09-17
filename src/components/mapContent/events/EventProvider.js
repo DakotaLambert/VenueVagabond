@@ -1,9 +1,9 @@
-import React, { useEvent } from "react";
+import React, { useState } from "react";
 
 export const EventContext = React.createContext();
 
 export const EventProvider = (props) => {
-	const [events, setEvents] = useEvent([]);
+	const [events, setEvents] = useState([]);
 
 	const getEvents = () => {
 		return fetch(`http://localhost:8000/events`, {
@@ -26,7 +26,7 @@ export const EventProvider = (props) => {
 			.then(setEvents);
 	};
 
-	const createEvent = (eventObject) => {
+	const createUserEvent = (eventObject) => {
 		return fetch("http://localhost:8000/events", {
 			method: "POST",
 			headers: {
@@ -43,7 +43,7 @@ export const EventProvider = (props) => {
 				events,
 				getEvents,
 				getEventById,
-				createEvent,
+				createUserEvent,
 			}}
 		>
 			{props.children}

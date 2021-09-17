@@ -11,7 +11,7 @@ export const StateDetail = () => {
 
 	useEffect(() => {
 		getStateById(stateId);
-	}, [stateId]);
+	}, []);
 
 	return (
 		<>

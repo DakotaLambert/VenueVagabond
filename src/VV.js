@@ -4,6 +4,7 @@ import { AppViews } from "../src/AppView";
 import { Login } from "../src/components/mapContent/auth/Login";
 import { Register } from "../src/components/mapContent/auth/Register";
 import { MapProvider } from "./components/mapContent/MapProvider";
+import { NavBar } from "./components/mapContent/navbar/NavBar";
 
 export const VV = () => (
 	<>
@@ -13,6 +14,7 @@ export const VV = () => (
 				if (localStorage.getItem("VV_User")) {
 					return (
 						<>
+            <NavBar />
 							<AppViews />
 						</>
 					);

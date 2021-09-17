@@ -1,0 +1,59 @@
+.FormContainer {
+  max-width: 100%;
+  margin: auto;
+  margin-top: 7rem;
+}
+
+.FormSet {
+  clear: left;
+  padding-bottom: 0.5rem;
+  min-height: 50px;
+  margin: 0 2rem 0 2rem;
+  padding-inline-start: 0;
+  display: block;
+  /* margin-inline-start: 2px; */
+  /* margin-inline-end: 2px; */
+  /* padding-block-start: 0.35em; */
+  /* padding-inline-start: 0.75em; */
+  /* padding-inline-end: 0.75em; */
+  /* padding-block-end: 0.625em; */
+  /* min-inline-size: min-content; */
+  /* border-width: 2px; */
+  /* border-style: groove; */
+  /* border-color: threedface; */
+  /* border-image: initial; */
+}
+.SubmitButton {
+  clear: both;
+  background-color: #aaa;
+  border: 0 none;
+  border-radius: 4px;
+  transition: all 0.23s ease-in-out 0s;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: normal;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 5px 5rem 2rem;
+  padding: 0 22px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: auto;
+}
+.SubmitButton:hover {
+  background-color: rgb(105, 105, 105);
+}
+.FormBox {
+  border-width: 3px;
+  max-width: 600px;
+  margin: auto;
+}
+.FormField {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+}

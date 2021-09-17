@@ -146,8 +146,7 @@ export const Register = (props) => {
 							onChange={createUserImageString}
 						/>
 					</fieldset>
-					<fieldset
-          ref={stateId}>
+					<fieldset>
 								<MapMap />
 					</fieldset>
 				</div>
