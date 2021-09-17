@@ -32,7 +32,7 @@ export const NavBar = () => {
 							Event Type Manager
 						</Link>
 					</li>
-					<li>
+					{/* <li>
 						<Link
 							onClick={() => {
 								setMenuActive(false);
@@ -41,7 +41,7 @@ export const NavBar = () => {
 						>
 							All Events
 						</Link>
-					</li>
+					</li> */}
 				</ul>
 			
 		);

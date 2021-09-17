@@ -67,13 +67,13 @@
 }
 .menu {
   position: fixed;
-  /* right: 355px; */
+  right: 22px;
   top: 15%;
   width: 12.5em;
   margin-top: -2.5em;
   border: 2px solid #76767624;
   padding: 1rem;
-  box-shadow: 16px 18px 0px 0px rgb(95 94 94 / 0%), 4px 8px 11px 2px rgb(125 124 124 / 50%);
+  box-shadow: 16px 18px 0px 0px rgb(95 94 94 / 0%), 4px 4px 6px 0 rgb(125 124 124 / 50%);
   background-color: rgb(255 255 253);
   padding: 8px 20px;
 }
@@ -107,10 +107,12 @@
 }
 
 .menuProfileImage {
-    height: 2rem;
-    width: 0.8rem;
-    border-radius: 50%;
-    object-fit: cover;
+  max-height: 3rem;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 

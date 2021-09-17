@@ -6,7 +6,7 @@ import "./Auth.css";
 export const Register = (props) => {
 	const firstName = useRef();
 	const lastName = useRef();
-  const stateId = useRef();
+	const stateId = useRef();
 	const username = useRef();
 	const password = useRef();
 	const image_url = useRef();
@@ -15,7 +15,14 @@ export const Register = (props) => {
 	const passwordDialog = useRef();
 	const history = useHistory();
 	const [currentPicture, setCurrentPicture] = useState({});
-  
+	const [stateIdChange, setStateIdChange] = useState({});
+
+	const handleStateIDChange = (selectBox) => {
+		const newStateId = { ...stateIdChange };
+		newStateId[selectBox.target.name] = selectBox.target.value;
+		setStateIdChange(newStateId);
+	};
+
 	const getBase64 = (file, callback) => {
 		const reader = new FileReader();
 		reader.addEventListener("load", () => callback(reader.result));
@@ -38,7 +45,7 @@ export const Register = (props) => {
 				email: email.current.value,
 				password: password.current.value,
 				image_url: currentPicture,
-				stateId: stateId.current.value,
+				stateId: parseInt(stateIdChange.stateId),
 			};
 
 			return fetch("http://127.0.0.1:8000/register", {
@@ -74,7 +81,6 @@ export const Register = (props) => {
 			<h1 className="h3 mb-3 font-weight-normal">Register</h1>
 			<form className="form--login--wrap" onSubmit={handleRegister}>
 				<div className="registerColumn1 form--login">
-				
 					<fieldset>
 						<input
 							ref={firstName}
@@ -142,12 +148,12 @@ export const Register = (props) => {
 						<input
 							type="file"
 							id="image_url"
-              ref={image_url}
+							ref={image_url}
 							onChange={createUserImageString}
 						/>
 					</fieldset>
 					<fieldset>
-								<MapMap />
+						<MapMap handleStateIDChange={handleStateIDChange} />
 					</fieldset>
 				</div>
 				<button className="btn btn-1 btn-sep icon-send" type="submit">
