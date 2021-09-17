@@ -8,7 +8,7 @@ import { EventTypeMap } from "./EventTypeMap";
 import "../../mapContent/events/Event.css";
 
 export const EventForm = () => {
-	const { states, getStateById } = useContext(MapContext);
+	const { singleState, getStateById } = useContext(MapContext);
 	const { createUserEvent } = useContext(EventContext);
 	const [event, setEvent] = useState({});
 	const [isLoading, setIsLoading] = useState(false);
@@ -82,7 +82,7 @@ export const EventForm = () => {
 							onChange={handleControlledInputChange}
 						>
 							<option style={{ fontStyle: "italic" }}>Choose Venue</option>
-							{states.state_venues?.map((venue) => {
+							{singleState.state_venues?.map((venue) => {
 								return (
 									<option key={venue.id} value={venue.id}>
 										{venue.name}

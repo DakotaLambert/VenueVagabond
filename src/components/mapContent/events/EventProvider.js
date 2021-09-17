@@ -43,7 +43,7 @@ export const EventProvider = (props) => {
 			headers: {
 				Authorization: `Token ${localStorage.getItem("VV_User")}`,
 			},
-		}).then(getEvents);
+		})
 	};
 
 	return (
