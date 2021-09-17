@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap");
+
+/* .navbar {
+    display: flex;
+}
+
+.navbar__item {
+    flex-basis: 20%;
+    list-style-type: none;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.navbar__logo {
+    max-height: 3.5rem;
+} */
+
+.navbar {
+    display: flex;
+    margin: auto;
+    box-shadow: 1px -1px 15px 0px rgb(74 74 74 / 17%);
+}
+
+.navbar__logo {
+    max-height: 4.5rem;
+    cursor: pointer;
+}
+
+.navSpace {
+    width: 9%;
+}
+
+.navbar__item {
+    align-self: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    letter-spacing: 5px;
+    margin-left: auto;
+}
+
+.navbar__create {
+    align-self: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    letter-spacing: 5px;
+}
+
+.navbar__link {
+    font-size: .8rem;
+}
+
+.navbar__text:hover {
+    background: #cacaca;
+    color: rgb(255, 255, 255);
+}
+
+
+.blur {
+  background-color: rgb(2, 2, 2, 0.8);
+  background-size: 100%;
+  z-index: 1;
+}
+.menu {
+  position: fixed;
+  /* right: 355px; */
+  top: 15%;
+  width: 12.5em;
+  margin-top: -2.5em;
+  border: 2px solid #76767624;
+  padding: 1rem;
+  box-shadow: 16px 18px 0px 0px rgb(95 94 94 / 0%), 4px 8px 11px 2px rgb(125 124 124 / 50%);
+  background-color: rgb(255 255 253);
+  padding: 8px 20px;
+}
+
+.menuSep {
+    border-top: 1px solid rgba(230, 230, 230, 1);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.menuSepLI {
+    padding-top: 0.5rem;
+}
+
+.menuPIU {
+    padding-left: 0;
+    align-self: center;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    letter-spacing: 5px;
+    margin-left: auto;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.menuTop {
+    display: flex;
+    align-items: center;
+}
+
+.menuProfileImage {
+    height: 2rem;
+    width: 0.8rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+

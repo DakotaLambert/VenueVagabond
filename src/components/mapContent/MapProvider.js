@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export const MapContext = React.createContext();
 
 export const MapProvider = (props) => {
-	const [states, setStates] = useState({});
+	const [states, setStates] = useState([]);
 
 	const getStates = () => {
 		return fetch(`http://localhost:8000/states`)

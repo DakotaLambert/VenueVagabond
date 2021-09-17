@@ -1,6 +1,9 @@
 {
   "editor.tabSize": 2,
   "cSpell.ignoreWords": [
-    "eventform"
+    "allevents",
+    "eventform",
+    "eventmanager",
+    "venuemanager"
   ]
 }

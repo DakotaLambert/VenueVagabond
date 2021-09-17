@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
-import "../auth/Auth.css"
+// import "../auth/Auth.css"
+import "../../../components/mapContent/events/Event.css";
 
 export const Login = () => {
 	const username = useRef();
@@ -44,14 +45,15 @@ export const Login = () => {
 					Close
 				</button>
 			</dialog>
-			<section>
-				<form className="form--login" onSubmit={handleLogin}>
+
+			<form className="FormContainer" onSubmit={handleLogin}>
+				<div className="FormBox">
 					<fieldset>
 						<input
+							style={{ padding: "0.8rem" }}
 							ref={username}
 							type="text"
 							id="username"
-							className="form-control"
 							placeholder="Username"
 							required
 							autoFocus
@@ -59,10 +61,10 @@ export const Login = () => {
 					</fieldset>
 					<fieldset>
 						<input
+							style={{ padding: "0.8rem" }}
 							ref={password}
 							type="password"
 							id="password"
-							className="form-control"
 							placeholder="Password"
 							required
 						/>
@@ -72,13 +74,12 @@ export const Login = () => {
 							textAlign: "center",
 						}}
 					>
-						<button className="btn btn-1 btn-sep icon-send" type="submit">
-							Sign In
-						</button>
+						<button className="SubmitButton" style={{marginLeft:"0", marginRight:"0"}} type="submit">Sign In</button>
 					</fieldset>
-				</form>
-			</section>
-			<section className="link--register">
+				</div>
+			</form>
+
+			<section>
 				<Link to="/register">
 					Don't have an account yet? Click here to sign up!
 				</Link>
