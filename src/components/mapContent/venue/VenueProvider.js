@@ -24,14 +24,22 @@ export const VenueProvider = (props) => {
 			.then((response) => response.json())
 			.then(setVenues);
 	};
-	const createVenue = (eventObject) => {
+	const createVenue = (venueObject) => {
 		return fetch("http://localhost:8000/venues", {
 			method: "POST",
 			headers: {
 				Authorization: `Token ${localStorage.getItem("VV_User")}`,
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify(eventObject),
+			body: JSON.stringify(venueObject),
+		}).then(getVenues);
+	};
+  const deleteVenue = (venueId) => {
+		return fetch(`http://localhost:8000/venues/${venueId}`, {
+			method: "DELETE",
+			headers: {
+				Authorization: `Token ${localStorage.getItem("VV_User")}`,
+			},
 		}).then(getVenues);
 	};
 	return (
@@ -41,6 +49,7 @@ export const VenueProvider = (props) => {
 				getVenues,
 				getVenueById,
 				createVenue,
+        deleteVenue
 			}}
 		>
 			{props.children}

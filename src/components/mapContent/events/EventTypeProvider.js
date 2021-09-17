@@ -36,14 +36,22 @@ export const EventTypeProvider = (props) => {
 			body: JSON.stringify(eventObject)
 		}).then(getEventTypes);
 	};
-  
+  const deleteEventType = (eventTypeId) => {
+		return fetch(`http://localhost:8000/eventtypes/${eventTypeId}`, {
+			method: "DELETE",
+			headers: {
+				Authorization: `Token ${localStorage.getItem("VV_User")}`,
+			},
+		}).then(getEventTypes);
+	};
 	return (
 		<EventTypeContext.Provider
 			value={{
 				eventTypes,
 				getEventTypes,
         getEventById,
-        createEventType
+        createEventType,
+        deleteEventType
 			}}
 		>
 			{props.children}

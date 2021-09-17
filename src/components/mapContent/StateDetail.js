@@ -7,7 +7,7 @@ export const StateDetail = () => {
 
 	const { stateId } = useParams();
 
-  const history = useHistory()
+	const history = useHistory();
 
 	useEffect(() => {
 		getStateById(stateId);
@@ -15,14 +15,24 @@ export const StateDetail = () => {
 
 	return (
 		<>
-    <button onClick={()=> {
-      history.push(`/eventform/${stateId}`)
-    }}>Create Event</button>
 			<div>
+				<button
+					onClick={() => {
+						history.push(`/eventform/${stateId}`);
+					}}
+				>
+					Create Event
+				</button>
+			</div>
+			<div className="eventsBox">
 				{states.state_venues?.map((venue) => {
 					return (
-						<div key={venue.id} style={{ color: "white" }}>
-							{venue.name}
+						<div
+							className="eventBoxes"
+							key={venue.id}
+							style={{ color: "white", textAlign: "center" }}
+						>
+							<h2>{venue.name}</h2>
 							<VenueEvents venue={venue} />
 						</div>
 					);

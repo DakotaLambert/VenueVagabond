@@ -9,6 +9,7 @@ import {EventTypeProvider} from "../src/components/mapContent/events/EventTypePr
 import {EventProvider} from "../src/components/mapContent/events/EventProvider"
 import { EventTypeForm } from "./components/mapContent/events/EventTypeForm";
 import { VenueForm } from "./components/mapContent/venue/VenueForm";
+// import { AllEvents } from "./components/mapContent/events/AllEvents";
 
 export const AppViews = () => {
 	return (
@@ -32,6 +33,9 @@ export const AppViews = () => {
           <Route exact path="/venuemanager">
             <VenueForm/>
           </Route>
+          {/* <Route exact path="/allevents">
+            <AllEvents/>
+          </Route> */}
           </EventProvider>
           </EventTypeProvider>
 				</VenueProvider>

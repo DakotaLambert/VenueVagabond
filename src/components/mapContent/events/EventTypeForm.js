@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 import { EventTypeContext } from "./EventTypeProvider";
 
 export const EventTypeForm = () => {
-	const { eventTypes, createEventType, getEventTypes } =
+	const { eventTypes, createEventType, getEventTypes, deleteEventType } =
 		useContext(EventTypeContext);
 
 	const [eventType, setEventType] = useState({});
@@ -80,9 +80,14 @@ export const EventTypeForm = () => {
 			>
 				{eventTypes.map((type) => {
 					return (
+            <>
 						<div key={type.id} value={type.id}>
 							{type.label}
 						</div>
+            <button onClick={()=>{
+              deleteEventType(type.id)
+            }}>Delete</button>
+            </>
 					);
 				})}
 			</div>
