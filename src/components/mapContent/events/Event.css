@@ -60,17 +60,20 @@
 
 .futureEventFlex {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 }
 
 .myBox {
-	border: none;
-	padding: 5px;
-	padding-right: 0;
-	/* font: 24px/36px sans-serif; */
-	/* width: 200px; */
-	height: 150px;
-	overflow-y: scroll;
+  border: none;
+  padding: 5px;
+  padding-right: 0;
+  /* font: 24px/36px sans-serif; */
+  /* width: 200px; */
+  height: 150px;
+  overflow-y: scroll;
+  background-color: dimgray;
+  border-radius: 5px;
+  padding: 10px;
 }
 ::-webkit-scrollbar {
 	width: 7px;
@@ -81,7 +84,7 @@
 	border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-	background: yellowgreen;
+	background: rgb(136, 136, 136);
 	border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {

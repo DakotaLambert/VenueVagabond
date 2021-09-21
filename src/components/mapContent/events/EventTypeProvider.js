@@ -4,7 +4,7 @@ export const EventTypeContext = React.createContext();
 
 export const EventTypeProvider = (props) => {
 	const [eventTypes, setEventTypes] = useState([]);
-
+  const [eventType, setEventType] = useState({})
 	const getEventTypes = () => {
 		return fetch(`http://localhost:8000/eventtypes`,{
       headers: {
@@ -48,6 +48,7 @@ export const EventTypeProvider = (props) => {
 		<EventTypeContext.Provider
 			value={{
 				eventTypes,
+        eventType,
 				getEventTypes,
         getEventById,
         createEventType,

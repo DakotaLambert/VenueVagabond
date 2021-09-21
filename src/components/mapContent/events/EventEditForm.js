@@ -3,21 +3,55 @@ import { useHistory } from "react-router-dom";
 import { EventContext } from "./EventProvider";
 import { useParams } from "react-router";
 import { MapContext } from "../MapProvider";
-import { EventFormEventTypeMap } from "./EventFormEventTypeMap";
+import { EventTypeMap } from "./EventTypeMap";
 
 import "../../mapContent/events/Event.css";
 
-export const EventForm = () => {
+export const EventEditForm = () => {
+	const { getStates } = useContext(MapContext);
 	const { singleState, getStateById } = useContext(MapContext);
-	const { createUserEvent } = useContext(EventContext);
+	const { updateEvent, getEventById } = useContext(EventContext);
+
 	const [event, setEvent] = useState({});
 	const [isLoading, setIsLoading] = useState(false);
+	const [currentPicture, setCurrentPicture] = useState("");
 
-	const { stateId } = useParams();
+	const { stateId, eventId } = useParams();
+
 	const history = useHistory();
 
+  const getBase64 = (file, callback) => {
+		const reader = new FileReader();
+		reader.addEventListener("load", () => callback(reader.result));
+		reader.readAsDataURL(file);
+	};
+
+	const createPostImageString = (event) => {
+		getBase64(event.target.files[0], (base64ImageString) => {
+			// console.log("Base64 of file is", base64ImageString);
+
+			// Update a component state variable to the value of base64ImageString
+			setCurrentPicture(base64ImageString);
+		});
+	};
+
 	useEffect(() => {
-		getStateById(stateId);
+		getEventById(eventId).then((eventObject) => {
+			setEvent({
+				id: parseInt(eventId),
+				stateId: parseInt(eventObject.event.venue.state.id),
+				name: eventObject.event.name,
+				venueId: eventObject.event.venue.id,
+				dateOfEvent: eventObject.event.date_of_event,
+				eventTypeId: eventObject.event.event_type.id,
+			});
+		});
+	}, [eventId]);
+
+	useEffect(() => {
+		getStates().then(() => {
+			getStateById(stateId);
+		});
 	}, []);
 
 	useEffect(() => {
@@ -42,11 +76,14 @@ export const EventForm = () => {
 
 	const handleSaveEvent = () => {
 		if (checkForm() === true) {
-			createUserEvent({
+			updateEvent({
+				id: parseInt(eventId),
+				stateId: event.stateId,
 				eventTypeId: parseInt(event.eventTypeId),
 				venueId: parseInt(event.venueId),
 				name: event.name,
 				dateOfEvent: event.dateOfEvent,
+        image_url: currentPicture
 			}).then(() => {
 				history.push(`/state/${stateId}`);
 			});
@@ -56,14 +93,12 @@ export const EventForm = () => {
 		}
 	};
 
-	// ? grab stateId from param
 	// TODO create StateVenueMap.js
-	// ? how to set limit on how many photos upload? disable when theres value/length on state variable?
 
 	const handleControlledInputChange = (field) => {
-		const newEvent = { ...event };
-		newEvent[field.target.name] = field.target.value;
-		setEvent(newEvent);
+		const updateEvent = { ...event };
+		updateEvent[field.target.name] = field.target.value;
+		setEvent(updateEvent);
 	};
 
 	return (
@@ -71,34 +106,33 @@ export const EventForm = () => {
 			<form className="FormContainer">
 				<div className="FormBox">
 					<fieldset className="FormSet">
-						<EventFormEventTypeMap
+						<EventTypeMap
+							eventStateVariable={event}
 							handleControlledInputChange={handleControlledInputChange}
 						/>
 					</fieldset>
+
 					<fieldset className="FormSet">
 						<select
 							className="FormField"
 							name="venueId"
 							onChange={handleControlledInputChange}
+							value={event.venueId}
 						>
 							<option style={{ fontStyle: "italic" }}>Choose Venue</option>
 							{singleState.state_venues?.map((venue) => {
-								return (
-									<option key={venue.id} value={venue.id}>
-										{venue.name}
-									</option>
-								);
+								return <option value={venue.id}>{venue.name}</option>;
 							})}
 						</select>
 					</fieldset>
 					<fieldset className="FormSet">
 						<input
 							className="FormField"
-							// value={event.name}
-              placeholder="Event Name"
+							placeholder="Event Name"
 							type="text"
 							name="name"
 							onChange={handleControlledInputChange}
+							value={event.name}
 						/>
 					</fieldset>
 					<fieldset className="FormSet">
@@ -108,9 +142,17 @@ export const EventForm = () => {
 							type="date"
 							name="dateOfEvent"
 							onChange={handleControlledInputChange}
+							value={event.dateOfEvent}
 						/>
 					</fieldset>
-          
+          <fieldset className="FormSet">
+						<input
+							type="file"
+							id="image_url"
+							className="postFormField"
+							onChange={createPostImageString}
+						/>
+					</fieldset>
 					<button
 						className="SubmitButton"
 						disabled={isLoading}
