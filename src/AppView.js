@@ -9,6 +9,7 @@ import {EventTypeProvider} from "../src/components/mapContent/events/EventTypePr
 import {EventProvider} from "../src/components/mapContent/events/EventProvider"
 import { EventTypeForm } from "./components/mapContent/events/EventTypeForm";
 import { VenueForm } from "./components/mapContent/venue/VenueForm";
+import { EventEditForm } from "./components/mapContent/events/EventEditForm";
 // import { AllEvents } from "./components/mapContent/events/AllEvents";
 
 export const AppViews = () => {
@@ -36,6 +37,9 @@ export const AppViews = () => {
           {/* <Route exact path="/allevents">
             <AllEvents/>
           </Route> */}
+          <Route exact path="/:stateId(\d+)/event/update/:eventId(\d+)">
+            <EventEditForm />
+          </Route>
           </EventProvider>
           </EventTypeProvider>
 				</VenueProvider>

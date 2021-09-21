@@ -153,7 +153,7 @@ export const Register = (props) => {
 						/>
 					</fieldset>
 					<fieldset>
-						<MapMap handleStateIDChange={handleStateIDChange} />
+						<MapMap handleControlledInputChange={handleStateIDChange} />
 					</fieldset>
 				</div>
 				<button className="btn btn-1 btn-sep icon-send" type="submit">

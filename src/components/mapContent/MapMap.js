@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react";
 
 import { MapContext } from "./MapProvider";
 
-export const MapMap = ({handleControlledInputChange, handleStateIDChange})=> {
+export const MapMap = ({handleControlledInputChange})=> {
 	const { states, getStates } = useContext(MapContext);
 
 	useEffect(() => {
@@ -12,7 +12,7 @@ export const MapMap = ({handleControlledInputChange, handleStateIDChange})=> {
 	return (
 		<select
 			className="FormField"
-			onChange={(handleControlledInputChange, handleStateIDChange)}
+			onChange={handleControlledInputChange}
 			name="stateId"
 		>
 			{states?.map((state) => {

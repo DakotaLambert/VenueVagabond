@@ -3,7 +3,7 @@ import { useHistory, useParams } from "react-router";
 import { MapContext } from "./MapProvider.js";
 import { VenueEvents } from "./venue/VenueEvents.js";
 export const StateDetail = () => {
-	const { states, getStateById } = useContext(MapContext);
+	const { singleState, getStateById } = useContext(MapContext);
 
 	const { stateId } = useParams();
 
@@ -15,8 +15,9 @@ export const StateDetail = () => {
 
 	return (
 		<>
-			<div>
+			<div style={{textAlign:"center"}}>
 				<button
+        
 					onClick={() => {
 						history.push(`/eventform/${stateId}`);
 					}}
@@ -25,7 +26,7 @@ export const StateDetail = () => {
 				</button>
 			</div>
 			<div className="eventsBox">
-				{states.state_venues?.map((venue) => {
+				{singleState.state_venues?.map((venue) => {
 					return (
 						<div
 							className="eventBoxes"

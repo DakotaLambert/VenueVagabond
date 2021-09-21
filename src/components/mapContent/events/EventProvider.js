@@ -23,7 +23,6 @@ export const EventProvider = (props) => {
 			},
 		})
 			.then((response) => response.json())
-			.then(setEvents);
 	};
 
 	const createUserEvent = (eventObject) => {
@@ -43,6 +42,17 @@ export const EventProvider = (props) => {
 			headers: {
 				Authorization: `Token ${localStorage.getItem("VV_User")}`,
 			},
+		})
+	};
+
+  const updateEvent = (update_event) => {
+		return fetch(`http://localhost:8000/events/${update_event.id}`, {
+			method: "PUT",
+			headers: {
+				Authorization: `Token ${localStorage.getItem("VV_User")}`,
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(update_event),
 		}).then(getEvents);
 	};
 
@@ -53,7 +63,8 @@ export const EventProvider = (props) => {
 				getEvents,
 				getEventById,
 				createUserEvent,
-        deleteEvent
+        deleteEvent,
+        updateEvent
 			}}
 		>
 			{props.children}

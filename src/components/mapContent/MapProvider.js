@@ -4,12 +4,14 @@ export const MapContext = React.createContext();
 
 export const MapProvider = (props) => {
 	const [states, setStates] = useState([]);
+	const [singleState, setSingleState] = useState({});
 
 	const getStates = () => {
 		return fetch(`http://localhost:8000/states`)
 			.then((response) => response.json())
 			.then(setStates);
 	};
+
 	const getStateById = (stateId) => {
 		return fetch(`http://localhost:8000/states/${stateId}`,{
       headers: {
@@ -18,13 +20,14 @@ export const MapProvider = (props) => {
 			},
     })
 			.then((response) => response.json())
-			.then(setStates);
+			.then(setSingleState);
 	};
 
 	return (
 		<MapContext.Provider
 			value={{
 				states,
+        singleState,
 				getStates,
         getStateById
 			}}

@@ -7,6 +7,7 @@ export const USMap = () => {
 
   const {getStateById} = useContext(MapContext)
   const history = useHistory()
+  
 	return (
 		<>
 			<div className="mapBox">

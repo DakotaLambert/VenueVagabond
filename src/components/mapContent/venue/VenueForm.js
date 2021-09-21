@@ -5,8 +5,9 @@ import { MapContext } from "../MapProvider";
 import { VenueContext } from "./VenueProvider";
 
 export const VenueForm = () => {
-	const { venues, createVenue, getVenues, deleteVenue } = useContext(VenueContext);
-  
+	const { venues, createVenue, getVenues, deleteVenue } =
+		useContext(VenueContext);
+
 	// ?TRACK STATE ID THROUGH MAP MAP
 
 	const [venue, setVenue] = useState({});
@@ -16,6 +17,7 @@ export const VenueForm = () => {
 		const newVenue = { ...venue };
 		newVenue[event.target.name] = event.target.value;
 		setVenue(newVenue);
+    console.log("im doing it")
 	};
 
 	const handleSaveVenue = () => {
@@ -81,14 +83,18 @@ export const VenueForm = () => {
 			>
 				{venues.map((venue) => {
 					return (
-            <>
-						<div key={venue.id} value={venue.id}>
-							{venue.name}
-						</div>
-            <button onClick={()=> {
-              deleteVenue(venue.id)
-            }}>Delete</button>
-            </>
+						<>
+							<div key={venue.id} value={venue.id}>
+								{venue.name}
+							</div>
+							<button
+								onClick={() => {
+									deleteVenue(venue.id);
+								}}
+							>
+								Delete
+							</button>
+						</>
 					);
 				})}
 			</div>
