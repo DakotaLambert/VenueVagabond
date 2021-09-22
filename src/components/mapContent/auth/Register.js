@@ -79,7 +79,7 @@ export const Register = (props) => {
 			</dialog>
 
 			<h1 className="h3 mb-3 font-weight-normal">Register</h1>
-			<form className="form--login--wrap" onSubmit={handleRegister}>
+			<form className="form--login--wrap" >
 				<div className="registerColumn1 form--login">
 					<fieldset>
 						<input
@@ -148,6 +148,9 @@ export const Register = (props) => {
 						<MapMap handleControlledInputChange={handleStateIDChange} />
 					</fieldset>
 					<fieldset>
+          <label for="image_url" class="custom-file-upload">
+            UPLOAD PHOTO
+            </label>
 						<input
 							type="file"
 							id="image_url"
@@ -157,11 +160,11 @@ export const Register = (props) => {
 					</fieldset>
 				</div>
 			</form>
-      <div className="registerButton">
+      <button onClick={handleRegister}className="registerButton" type="submit">
 				
 					Register
 				
-        </div>
+        </button>
 			<section >
       <Link style={{color:"white"}}to="/login">Already registered? Login</Link>
 			</section>

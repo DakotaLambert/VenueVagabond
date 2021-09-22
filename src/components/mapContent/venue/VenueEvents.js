@@ -34,7 +34,7 @@ export const VenueEvents = ({ venue }) => {
 			</button>
 		);
 	};
-
+// ? check for state-venues length and show something else if 0
 	const handleUpdateEvent = (event_id) => {
 		history.push(`/events/edit/${event_id}`);
 	};

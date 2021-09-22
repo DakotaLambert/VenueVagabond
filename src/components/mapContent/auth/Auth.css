@@ -17,6 +17,7 @@ fieldset {
 .form--login--wrap {
   display: flex;
   margin: auto;
+  margin-top: 5rem;
   max-width: 900px;
   flex-wrap: wrap;
   justify-content: center;
@@ -180,4 +181,61 @@ fieldset {
 }
 .registerButton:hover {
 	background-color: rgb(105, 105, 105);
+}
+
+#file-upload-button {
+  clear: both;
+	background-color: #aaa;
+	border: 0 none;
+	border-radius: 4px;
+	transition: all 0.23s ease-in-out 0s;
+	color: #ffffff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 15px;
+	font-weight: normal;
+	height: 32px;
+	line-height: 32px;
+	margin-bottom: 5rem;
+	padding: 0 22px;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+	width: auto;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 2px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
 }
