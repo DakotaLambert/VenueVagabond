@@ -2,6 +2,13 @@
   font-size: 2.5rem;
 }
 
+.loginLogo {
+	max-height: 7rem;
+  animation: shake 5s both;
+  backface-visibility: hidden;
+  animation-iteration-count: infinite;
+}
+
 fieldset {
   margin-inline-end: 0;
   border: 0;
@@ -99,8 +106,28 @@ fieldset {
 }
 
 .button--close {
-  position: relative;
-  bottom: -2rem;
+	clear: both;
+	background-color: #aaa;
+	border: 0 none;
+	border-radius: 4px;
+	transition: all 0.23s ease-in-out 0s;
+	color: #ffffff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 15px;
+	font-weight: normal;
+	height: 32px;
+	line-height: 32px;
+	margin-top: 2rem;
+	padding: 0 22px;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+	width: auto;
+}
+.button--close:hover {
+	background-color: rgb(105, 105, 105);
 }
 
 .dialog {
@@ -128,4 +155,29 @@ fieldset {
 .profileImageDiv {
   display: flex;
   justify-content: center;
+}
+
+.registerButton {
+	clear: both;
+	background-color: #aaa;
+	border: 0 none;
+	border-radius: 4px;
+	transition: all 0.23s ease-in-out 0s;
+	color: #ffffff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 15px;
+	font-weight: normal;
+	height: 32px;
+	line-height: 32px;
+	margin-bottom: 5rem;
+	padding: 0 22px;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+	width: auto;
+}
+.registerButton:hover {
+	background-color: rgb(105, 105, 105);
 }

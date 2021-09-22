@@ -28,9 +28,9 @@ export const EventTypeForm = () => {
 		}).then(clearForm());
 	};
 
-  const clearForm = () => { 
-    document.getElementById("eventTypeForm").reset();
-  }
+	const clearForm = () => {
+		document.getElementById("eventTypeForm").reset();
+	};
 
 	useEffect(() => {
 		getEventTypes();
@@ -65,7 +65,6 @@ export const EventTypeForm = () => {
 							onClick={(event) => {
 								event.preventDefault();
 								handleSaveEventType();
-
 							}}
 						>
 							Save Event Type
@@ -74,20 +73,26 @@ export const EventTypeForm = () => {
 				</div>
 			</form>
 			<div
-				className="FormField"
+				className="venueListContainer myOtherBox"
 				onChange={handleControlledInputChange}
 				name="eventTypeId"
 			>
 				{eventTypes.map((type) => {
 					return (
-            <>
-						<div key={type.id} value={type.id}>
-							{type.label}
-						</div>
-            <button onClick={()=>{
-              deleteEventType(type.id)
-            }}>Delete</button>
-            </>
+						<>
+							<div className="venueListFlexBasis">
+								<div style={{ fontSize: "25px" }} key={type.id} value={type.id}>
+									{type.label}
+								</div>
+								<button
+									onClick={() => {
+										deleteEventType(type.id);
+									}}
+								>
+									Delete
+								</button>
+							</div>
+						</>
 					);
 				})}
 			</div>

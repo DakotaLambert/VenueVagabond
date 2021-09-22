@@ -1,0 +1,43 @@
+.venueListContainer {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	margin: auto;
+	max-width: 600px;
+}
+
+.venueListFlexBasis {
+	flex-basis: 30%;
+	text-align: center;
+	margin-bottom: 4rem;
+}
+
+.myOtherBox {
+	border: 2px solid black;
+	padding: 5px;
+	padding-right: 0;
+	/* font: 24px/36px sans-serif; */
+	/* width: 200px; */
+	height: 350px;
+	overflow-y: scroll;
+	background-color: dimgray;
+  /* background-image: url(../../../images/55+-Bass-Speaker-Wallpapers-Download-at-WallpaperBro.jpg);
+  background-size: 625px; */
+	border-radius: 5px;
+	padding: 10px;
+}
+::-webkit-scrollbar {
+	width: 7px;
+	height: 12px;
+}
+::-webkit-scrollbar-track {
+	border: 1px solid white;
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: rgb(255, 254, 254);
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #88ba1c;
+}

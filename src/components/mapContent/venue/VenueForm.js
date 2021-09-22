@@ -4,6 +4,7 @@ import { MapMap } from "../MapMap";
 import { MapContext } from "../MapProvider";
 import { VenueContext } from "./VenueProvider";
 
+import "../venue/VenueStyles.css";
 export const VenueForm = () => {
 	const { venues, createVenue, getVenues, deleteVenue } =
 		useContext(VenueContext);
@@ -17,7 +18,6 @@ export const VenueForm = () => {
 		const newVenue = { ...venue };
 		newVenue[event.target.name] = event.target.value;
 		setVenue(newVenue);
-    console.log("im doing it")
 	};
 
 	const handleSaveVenue = () => {
@@ -77,23 +77,32 @@ export const VenueForm = () => {
 				</div>
 			</form>
 			<div
-				className="FormField"
+				className="venueListContainer myOtherBox"
 				onChange={handleControlledInputChange}
 				name="venueId"
 			>
 				{venues.map((venue) => {
 					return (
 						<>
-							<div key={venue.id} value={venue.id}>
-								{venue.name}
+							<div className="venueListFlexBasis">
+								<div
+									key={venue.id}
+									value={venue.id}
+									style={{ fontSize: "25px" }}
+								>
+									{venue.name}
+								</div>
+								<div>{venue.state.abbreviation}</div>
+								<div>
+									<button
+										onClick={() => {
+											deleteVenue(venue.id);
+										}}
+									>
+										Delete
+									</button>
+								</div>
 							</div>
-							<button
-								onClick={() => {
-									deleteVenue(venue.id);
-								}}
-							>
-								Delete
-							</button>
 						</>
 					);
 				})}

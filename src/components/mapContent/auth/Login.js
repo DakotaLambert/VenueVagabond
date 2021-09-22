@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
-// import "../auth/Auth.css"
+import "../auth/Auth.css";
 import "../../../components/mapContent/events/Event.css";
-
+import loginLogo from "../../../images/VVlogo.png";
 export const Login = () => {
 	const username = useRef();
 	const password = useRef();
@@ -47,9 +47,15 @@ export const Login = () => {
 			</dialog>
 
 			<form className="FormContainer" onSubmit={handleLogin}>
+				<img
+					className="loginLogo"
+					src={loginLogo}
+					style={{ maxHeight: "10rem", marginTop: "2rem" }}
+				/>
 				<div className="FormBox">
 					<fieldset>
 						<input
+							className="FormField"
 							style={{ padding: "0.8rem" }}
 							ref={username}
 							type="text"
@@ -61,6 +67,7 @@ export const Login = () => {
 					</fieldset>
 					<fieldset>
 						<input
+							className="FormField"
 							style={{ padding: "0.8rem" }}
 							ref={password}
 							type="password"
@@ -69,18 +76,19 @@ export const Login = () => {
 							required
 						/>
 					</fieldset>
-					<fieldset
-						style={{
-							textAlign: "center",
-						}}
+
+					<button
+						className="SubmitButton"
+						style={{ marginLeft: "0", marginRight: "0", marginTop: "2rem" }}
+						type="submit"
 					>
-						<button className="SubmitButton" style={{marginLeft:"0", marginRight:"0"}} type="submit">Sign In</button>
-					</fieldset>
+						Sign In
+					</button>
 				</div>
 			</form>
 
 			<section>
-				<Link to="/register">
+				<Link style={{ color: "white" }} to="/register">
 					Don't have an account yet? Click here to sign up!
 				</Link>
 			</section>

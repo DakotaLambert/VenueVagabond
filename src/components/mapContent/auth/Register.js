@@ -67,7 +67,7 @@ export const Register = (props) => {
 	};
 
 	return (
-		<main style={{ textAlign: "center" }}>
+		<main style={{ textAlign: "center", marginTop:"7rem" }}>
 			<dialog className="dialog dialog--password" ref={passwordDialog}>
 				<div>Passwords do not match</div>
 				<button
@@ -145,6 +145,9 @@ export const Register = (props) => {
 						/>
 					</fieldset>
 					<fieldset>
+						<MapMap handleControlledInputChange={handleStateIDChange} />
+					</fieldset>
+					<fieldset>
 						<input
 							type="file"
 							id="image_url"
@@ -152,16 +155,15 @@ export const Register = (props) => {
 							onChange={createUserImageString}
 						/>
 					</fieldset>
-					<fieldset>
-						<MapMap handleControlledInputChange={handleStateIDChange} />
-					</fieldset>
 				</div>
-				<button className="btn btn-1 btn-sep icon-send" type="submit">
-					Register
-				</button>
 			</form>
-			<section className="link--register">
-				Already registered? <Link to="/login">Login</Link>
+      <div className="registerButton">
+				
+					Register
+				
+        </div>
+			<section >
+      <Link style={{color:"white"}}to="/login">Already registered? Login</Link>
 			</section>
 		</main>
 	);

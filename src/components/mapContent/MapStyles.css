@@ -1,18 +1,19 @@
 .mapBox {
 	margin: auto;
 	max-width: 940px;
-	margin-top: 7rem;
+	margin-top: 5rem;
 }
 
 .state {
 	position: relative;
 	transition: 0.3s;
 	fill: whitesmoke;
-	stroke-width: 10px;
+	stroke: black;
 	margin: 1rem;
 }
 .state:hover {
 	fill: rgb(255, 134, 21);
+  
 	cursor: pointer;
 }
 
@@ -33,4 +34,5 @@
   border: 2px solid #202020;
   border-radius: 5px;
   padding: 10px;
+  margin-bottom: 2rem;
 }

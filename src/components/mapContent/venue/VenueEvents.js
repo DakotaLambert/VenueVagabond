@@ -3,6 +3,8 @@ import { useHistory, useParams } from "react-router";
 import { EventContext } from "../events/EventProvider";
 import { MapContext } from "../MapProvider";
 
+import editButton from "../../../images/editButton.png"
+import deleteButton from "../../../images/deleteButton.png"
 export const VenueEvents = ({ venue }) => {
 	const { getStateById } = useContext(MapContext);
 	const { deleteEvent } = useContext(EventContext);
@@ -49,19 +51,18 @@ export const VenueEvents = ({ venue }) => {
 							return (
 								<>
 									<div className="futureEventFlex">
-										<div value={venueEvents.id} key={venueEvents.id}>
+										<div style={{textAlign:"start"}}value={venueEvents.id} key={venueEvents.id}>
 											{venueEvents.name} 
                       <br />
                       {venueEvents.date_of_event}
 										</div>
-										<button
+										<img
+                    src={deleteButton}
 											onClick={() => {
 												handleDelete(venueEvents.id);
 											}}
-											style={{ marginLeft: "auto" }}
-										>
-											Delete
-										</button>
+											style={{ marginLeft: "auto", maxHeight:"2rem", cursor:"pointer" }} 
+										/>
 									</div>
 								</>
 							);
@@ -80,28 +81,32 @@ export const VenueEvents = ({ venue }) => {
 										style={{ marginBottom: "1rem" }}
 										className="futureEventFlex"
 									>
-										<div key={venueEvents.id}>
+										<div 
+                    style={{textAlign:"start"}}
+                    key={venueEvents.id}>
                       {venueEvents.name}
                       <br/>
                       {venueEvents.date_of_event}
                       </div>
 
-										<button
+										<img
+                    
+                    src={editButton}
 											onClick={() => {
 												history.push(`/${stateId}/event/update/${venueEvents.id}`)
 											}}
-											style={{ marginLeft: "auto" }}
-										>
-											Update
-										</button>
-										<button
+											style={{ marginLeft: "auto", maxHeight:"2rem", cursor:"pointer" }}
+										/>
+											
+										
+										<img
+                    src={deleteButton}
 											onClick={() => {
 												handleDelete(venueEvents.id);
 											}}
-											style={{ marginLeft: "1rem" }}
-										>
-											Delete
-										</button>
+											style={{ marginLeft: "1rem", maxHeight:"2rem", cursor:"pointer" }} 
+										/>
+											
 									</div>
 								</>
 							);

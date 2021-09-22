@@ -4,16 +4,22 @@ import { Link, useHistory } from "react-router-dom";
 import "./NavBar.css";
 import Logo from "../../../images/VVlogo.png";
 import logoutDoor from "../../../images/logoutButton.png";
+import menuBurg from "../../../images/menuButton.png"
+
+
 export const NavBar = () => {
 	const history = useHistory();
 	const [menuActive, setMenuActive] = useState(false);
 
 	const showMenu = () => {
 		return (
-			
-				<ul className="menu">
-					<li style={{ marginBottom: ".5rem" }}>
+			<div id="demo-modal" className="modal">
+				<div className="modal__content">
+					<h1>Menu</h1>
+
+					<p>
 						<Link
+							style={{ fontSize: "20px" }}
 							onClick={() => {
 								setMenuActive(false);
 							}}
@@ -21,9 +27,10 @@ export const NavBar = () => {
 						>
 							Venue Manager
 						</Link>
-					</li>
-					<li style={{ marginBottom: ".5rem" }}>
+					</p>
+					<p>
 						<Link
+							style={{ fontSize: "20px" }}
 							onClick={() => {
 								setMenuActive(false);
 							}}
@@ -31,19 +38,24 @@ export const NavBar = () => {
 						>
 							Event Type Manager
 						</Link>
-					</li>
-					{/* <li>
-						<Link
-							onClick={() => {
+					</p>
+					<div className="modal__footer">VV ©</div>
+
+					<a
+						style={{ cursor: "pointer" }}
+						onClick={() => {
+							if (menuActive) {
 								setMenuActive(false);
-							}}
-							to="/allevents"
-						>
-							All Events
-						</Link>
-					</li> */}
-				</ul>
-			
+							} else {
+								setMenuActive(true);
+							}
+						}}
+						className="modal__close"
+					>
+						&times;
+					</a>
+				</div>
+			</div>
 		);
 	};
 
@@ -51,7 +63,7 @@ export const NavBar = () => {
 		<>
 			<ul className="navbar">
 				<div className="navSpace"></div>
-				<li className="">
+				
 					<Link
 						to="/"
 						onClick={() => {
@@ -60,8 +72,9 @@ export const NavBar = () => {
 					>
 						<img className="navbar__logo" src={Logo} />
 					</Link>
-				</li>
-				<div
+				
+				<button
+          className="navbar__item eventListButton"
 					onClick={() => {
 						if (menuActive) {
 							setMenuActive(false);
@@ -69,11 +82,10 @@ export const NavBar = () => {
 							setMenuActive(true);
 						}
 					}}
-					className="navbar__item menuProfileImage"
-					style={{ backgroundColor: "white", cursor: "pointer" }}
-				></div>
+					
+				><img src={menuBurg} style={{maxHeight:"1rem"}}/></button>
 				{localStorage.getItem("VV_User") !== null ? (
-					<li className="navbar__item">
+					
 						<img
 							onClick={() => {
 								localStorage.removeItem("VV_User");
@@ -83,7 +95,7 @@ export const NavBar = () => {
 							className="logoutButton nav-link fakeLink"
 							src={logoutDoor}
 						/>
-					</li>
+					
 				) : (
 					<>
 						<li className="nav-item">
