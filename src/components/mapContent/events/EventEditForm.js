@@ -146,6 +146,9 @@ export const EventEditForm = () => {
 						/>
 					</fieldset>
           <fieldset className="FormSet">
+            <label for="image_url" class="custom-file-upload">
+            UPLOAD PHOTO
+            </label>
 						<input
 							type="file"
 							id="image_url"

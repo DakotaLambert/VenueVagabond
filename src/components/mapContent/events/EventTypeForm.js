@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { useHistory } from "react-router-dom";
 import { EventTypeContext } from "./EventTypeProvider";
+import deleteButton from "../../../images/deleteButton.png";
 
 export const EventTypeForm = () => {
 	const { eventTypes, createEventType, getEventTypes, deleteEventType } =
@@ -84,13 +85,19 @@ export const EventTypeForm = () => {
 								<div style={{ fontSize: "25px" }} key={type.id} value={type.id}>
 									{type.label}
 								</div>
-								<button
+								<img
+									src={deleteButton}
+									style={{
+										marginLeft: "auto",
+										maxHeight: "1.8rem",
+										cursor: "pointer",
+										alignSelf: "center",
+									}}
 									onClick={() => {
 										deleteEventType(type.id);
 									}}
-								>
-									Delete
-								</button>
+								/>
+	
 							</div>
 						</>
 					);

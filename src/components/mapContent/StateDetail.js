@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import { MapContext } from "./MapProvider.js";
 import { VenueEvents } from "./venue/VenueEvents.js";
+import "../mapContent/MapStyles.css"
+
 export const StateDetail = () => {
 	const { singleState, getStateById } = useContext(MapContext);
 
@@ -17,7 +19,7 @@ export const StateDetail = () => {
 		<>
 			<div style={{textAlign:"center"}}>
 				<button
-        
+          className="createEventButton"
 					onClick={() => {
 						history.push(`/eventform/${stateId}`);
 					}}

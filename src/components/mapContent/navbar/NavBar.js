@@ -4,8 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import "./NavBar.css";
 import Logo from "../../../images/VVlogo.png";
 import logoutDoor from "../../../images/logoutButton.png";
-import menuBurg from "../../../images/menuButton.png"
-
+import menuBurg from "../../../images/menuButton.png";
 
 export const NavBar = () => {
 	const history = useHistory();
@@ -63,18 +62,16 @@ export const NavBar = () => {
 		<>
 			<ul className="navbar">
 				<div className="navSpace"></div>
-				
-					<Link
-						to="/"
-						onClick={() => {
-							setMenuActive(false);
-						}}
-					>
-						<img className="navbar__logo" src={Logo} />
-					</Link>
-				
+				<Link
+					to="/"
+					onClick={() => {
+						setMenuActive(false);
+					}}
+				>
+					<img className="navbar__logo" src={Logo} />
+				</Link>
 				<button
-          className="navbar__item eventListButton"
+					className="navbar__item eventListButton"
 					onClick={() => {
 						if (menuActive) {
 							setMenuActive(false);
@@ -82,20 +79,19 @@ export const NavBar = () => {
 							setMenuActive(true);
 						}
 					}}
-					
-				><img src={menuBurg} style={{maxHeight:"1rem"}}/></button>
+				>
+					<img src={menuBurg} style={{ maxHeight: "1rem" }} />
+				</button>
 				{localStorage.getItem("VV_User") !== null ? (
-					
-						<img
-							onClick={() => {
-								localStorage.removeItem("VV_User");
-								history.push("/");
-							}}
-							style={{ maxHeight: "2.5rem", cursor: "pointer" }}
-							className="logoutButton nav-link fakeLink"
-							src={logoutDoor}
-						/>
-					
+					<img
+						onClick={() => {
+							localStorage.removeItem("VV_User");
+							history.push("/");
+						}}
+						style={{ maxHeight: "2.5rem", cursor: "pointer" }}
+						className="logoutButton nav-link fakeLink"
+						src={logoutDoor}
+					/>
 				) : (
 					<>
 						<li className="nav-item">

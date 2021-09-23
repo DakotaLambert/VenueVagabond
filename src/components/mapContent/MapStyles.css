@@ -12,7 +12,7 @@
 	margin: 1rem;
 }
 .state:hover {
-	fill: rgb(255, 134, 21);
+	fill: #46f896;;
   
 	cursor: pointer;
 }
@@ -22,7 +22,7 @@
 	justify-content: space-evenly;
 	margin: auto;
 	max-width: 1000px;
-	margin-top: 7rem;
+	margin-top: 5rem;
 	flex-wrap: wrap;
 }
 
@@ -35,4 +35,29 @@
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 2rem;
+}
+
+.createEventButton {
+	clear: both;
+	background-color: #aaa;
+	border: 0 none;
+	border-radius: 4px;
+	transition: all 0.23s ease-in-out 0s;
+	color: #ffffff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 15px;
+	font-weight: normal;
+	height: 32px;
+	line-height: 32px;
+	margin-top: 5rem;
+	padding: 0 22px;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+	width: auto;
+}
+.createEventButton:hover {
+	background-color: rgb(105, 105, 105);
 }
