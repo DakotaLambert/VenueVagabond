@@ -12,7 +12,7 @@ import { VenueForm } from "./components/mapContent/venue/VenueForm";
 import { EventEditForm } from "./components/mapContent/events/EventEditForm";
 import { EventImageProvider } from "./components/mapContent/eventimages/EventImageProvider";
 import { EventImageList } from "./components/mapContent/eventimages/EventImageList";
-// import { AllEvents } from "./components/mapContent/events/AllEvents";
+
 
 export const AppViews = () => {
 	return (
@@ -37,9 +37,7 @@ export const AppViews = () => {
 								<Route exact path="/venuemanager">
 									<VenueForm />
 								</Route>
-								{/* <Route exact path="/allevents">
-            <AllEvents/>
-          </Route> */}
+								
 								<Route exact path="/:stateId(\d+)/event/update/:eventId(\d+)">
 									<EventEditForm />
 								</Route>

@@ -4,11 +4,12 @@
 	flex-wrap: wrap;
 	margin: auto;
 	max-width: 600px;
+  overflow-wrap: anywhere;
 }
 
 .venueListFlexBasis {
 	flex-basis: 30%;
-	text-align: center;
+	/* text-align: center; */
 	margin-bottom: 4rem;
 }
 
@@ -39,5 +40,12 @@
 	border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-	background: #88ba1c;
+	background: white;
+}
+
+.lowerTrash {
+  text-align: center;
+  /* justify-self: stretch; */
+  height: 50%;
+  display: flex;
 }

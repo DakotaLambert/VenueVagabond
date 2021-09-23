@@ -4,7 +4,10 @@ import { MapMap } from "../MapMap";
 import { MapContext } from "../MapProvider";
 import { VenueContext } from "./VenueProvider";
 
+import deleteButton from "../../../images/deleteButton.png";
+
 import "../venue/VenueStyles.css";
+
 export const VenueForm = () => {
 	const { venues, createVenue, getVenues, deleteVenue } =
 		useContext(VenueContext);
@@ -85,22 +88,27 @@ export const VenueForm = () => {
 					return (
 						<>
 							<div className="venueListFlexBasis">
-								<div
-									key={venue.id}
-									value={venue.id}
-									style={{ fontSize: "25px" }}
-								>
-									{venue.name}
+								<div className="upperTrash">
+									<div
+										key={venue.id}
+										value={venue.id}
+										style={{ fontSize: "25px" }}
+									>
+										{venue.name}
+									</div>
+									<div>{venue.state.abbreviation}</div>
 								</div>
-								<div>{venue.state.abbreviation}</div>
-								<div>
-									<button
+								<div className="lowerTrash">
+									<img
+										style={{
+											maxHeight: "1.8rem",
+											cursor: "pointer",
+										}}
+										src={deleteButton}
 										onClick={() => {
 											deleteVenue(venue.id);
 										}}
-									>
-										Delete
-									</button>
+									/>
 								</div>
 							</div>
 						</>

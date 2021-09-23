@@ -2,7 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import { MapContext } from "./MapProvider.js";
 import { VenueEvents } from "./venue/VenueEvents.js";
-import "../mapContent/MapStyles.css"
+
+import createButton from "../../images/createButton.png";
+
+import "../mapContent/MapStyles.css";
 
 export const StateDetail = () => {
 	const { singleState, getStateById } = useContext(MapContext);
@@ -14,18 +17,21 @@ export const StateDetail = () => {
 	useEffect(() => {
 		getStateById(stateId);
 	}, []);
+	console.log(singleState.state_venues);
+
+	// ? response.event.eventimage_set.map,
 
 	return (
 		<>
-			<div style={{textAlign:"center"}}>
-				<button
-          className="createEventButton"
+			<div style={{ textAlign: "center" }}>
+				<img
+					className="eventCreate"
+					src={createButton}
+					style={{ cursor: "pointer", marginTop: "5rem" }}
 					onClick={() => {
 						history.push(`/eventform/${stateId}`);
 					}}
-				>
-					Create Event
-				</button>
+				/>
 			</div>
 			<div className="eventsBox">
 				{singleState.state_venues?.map((venue) => {

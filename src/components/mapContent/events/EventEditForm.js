@@ -83,7 +83,7 @@ export const EventEditForm = () => {
 				venueId: parseInt(event.venueId),
 				name: event.name,
 				dateOfEvent: event.dateOfEvent,
-        image_url: currentPicture
+        image_path: currentPicture
 			}).then(() => {
 				history.push(`/state/${stateId}`);
 			});
