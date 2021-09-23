@@ -61,3 +61,20 @@
 .createEventButton:hover {
 	background-color: rgb(105, 105, 105);
 }
+
+.eventCreate {
+	max-height: 4rem;
+	cursor: pointer;
+}
+
+.eventCreate:hover {
+	animation: pulse 1.5s ease-in-out;
+	backface-visibility: hidden;
+	animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}

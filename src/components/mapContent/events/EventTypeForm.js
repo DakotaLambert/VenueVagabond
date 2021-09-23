@@ -88,16 +88,13 @@ export const EventTypeForm = () => {
 								<img
 									src={deleteButton}
 									style={{
-										marginLeft: "auto",
 										maxHeight: "1.8rem",
 										cursor: "pointer",
-										alignSelf: "center",
 									}}
 									onClick={() => {
 										deleteEventType(type.id);
 									}}
 								/>
-	
 							</div>
 						</>
 					);

@@ -15,6 +15,7 @@ export const MapMap = ({handleControlledInputChange})=> {
 			onChange={handleControlledInputChange}
 			name="stateId"
 		>
+      <option style={{fontStyle:"italic"}}>Choose a State</option>
 			{states?.map((state) => {
 				return (
 					<option key={state.id} value={state.id}>

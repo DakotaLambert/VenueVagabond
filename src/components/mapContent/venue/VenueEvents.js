@@ -2,11 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { EventContext } from "../events/EventProvider";
 import { MapContext } from "../MapProvider";
+import { EventImageContext } from "../eventimages/EventImageProvider";
 
-import "../../../components/mapContent/eventimages/EventImageStyles.css";
 import editButton from "../../../images/editButton.png";
 import deleteButton from "../../../images/deleteButton.png";
-import { EventImageContext } from "../eventimages/EventImageProvider";
+
+import "../../../components/mapContent/eventimages/EventImageStyles.css";
 // import { EventImageList } from "../eventimages/EventImageList";
 
 export const VenueEvents = ({ venue }) => {
@@ -108,14 +109,14 @@ export const VenueEvents = ({ venue }) => {
 											key={venueEvents.id}
 										>
 											<div
-                      value={venueEvents.id}
+												value={venueEvents.id}
 												onClick={() => {
 													// if (menuActive) {
 													// 	setMenuActive(false);
 													// } else {
 													// 	setMenuActive(true);
 													// }
-                          history.push(`/${venueEvents.id}/images`)
+													history.push(`/${venueEvents.id}/images`);
 												}}
 												style={{ color: "white", cursor: "pointer" }}
 											>

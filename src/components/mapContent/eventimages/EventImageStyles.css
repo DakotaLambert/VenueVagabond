@@ -40,3 +40,57 @@
 	color: #ff0000;
 	text-decoration: none;
 }
+
+.imageFlex {
+  display: flex;
+  justify-content: space-evenly;
+  /* margin-top: 5rem; */
+}
+
+.myImageBox {
+  margin: auto;
+  
+	/* border: 2px solid black; */
+	padding: 5px;
+	padding-right: 0;
+	/* font: 24px/36px sans-serif; */
+	max-width: 1500px;
+	height: 700px;
+	overflow-y: scroll;
+	background-color: #66646400;
+  /* background-image: url(../../../images/55+-Bass-Speaker-Wallpapers-Download-at-WallpaperBro.jpg);
+  background-size: 625px; */
+  margin-top: 2rem;
+	border-radius: 5px;
+	/* padding: 10px; */
+}
+::-webkit-scrollbar {
+	width: 7px;
+	height: 12px;
+}
+::-webkit-scrollbar-track {
+	border: 1px solid rgb(66, 66, 66);
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: rgb(255, 254, 254);
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #ffffff;
+}
+.imageImage {
+  border: 2px solid black;
+}
+
+
+.backButton {
+	max-height: 3rem;
+	cursor: pointer;
+}
+
+.backButton:hover {
+	animation: pulse 1.5s ease-in-out;
+	backface-visibility: hidden;
+	animation-iteration-count: infinite;
+}
